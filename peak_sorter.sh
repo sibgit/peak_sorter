@@ -29,6 +29,7 @@ cat <( head -n1 ${OUTPUT_FILE}.tmp ) \
     <( tail -n+2 ${OUTPUT_FILE}.tmp | sort -nr -k $COL_NB) > $OUTPUT_FILE
 rm "${OUTPUT_FILE}.tmp"
 echo "### Completed peak sorter script. Output file is: $OUTPUT_FILE"
+echo "### The highest peak in the Alps is: $( head -n2 $OUTPUT_FILE | tail -n1 | cut -f1,2 )"
 DAHU_COUNT=$(head -n2 $OUTPUT_FILE | tail -n1 | cut -f5)
 echo "### The number of Dahus on the Alps' highest peak is: $DAHU_COUNT"
 
