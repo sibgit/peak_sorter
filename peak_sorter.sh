@@ -2,6 +2,7 @@
 ####################################################################################################
 ### Peak sorter.
 ### Sorts the 82 4000m peaks of the Alps from highest to lowest.
+### Authors: introducton to git course, SIB.
 ####################################################################################################
 
 # Input arguments. These files must be located in the current working directory.
