@@ -4,7 +4,7 @@
 ### Sorts the 82 4000m peaks of the Alps from highest to lowest.
 ####################################################################################################
 
-# Input arguments.
+# Input arguments. These files must be located in the current working directory.
 INPUT_FILE='alpine_peaks_input.txt'
 OUTPUT_FILE='sorted_peaks.txt'
 DAHU_TABLE='dahu_counts.txt'
@@ -23,7 +23,7 @@ cat <( paste <(head -n1 $INPUT_FILE) <(head -n1 $DAHU_TABLE | cut -f2) | sed 's@
        <( tail -n+2 $DAHU_TABLE | sort -k1 )) > "${OUTPUT_FILE}.tmp"
 
 
-# Sort peak list by summit elevation, from highest to lowest.
+# Sort peak list by summit elevation, from highest to lowest. Save output as a new file.
 cat <( head -n1 ${OUTPUT_FILE}.tmp ) \
     <( tail -n+2 ${OUTPUT_FILE}.tmp | sort -nr -k $COL_NB) > $OUTPUT_FILE
 rm "${OUTPUT_FILE}.tmp"
